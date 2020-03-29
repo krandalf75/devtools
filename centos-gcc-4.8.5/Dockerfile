@@ -15,7 +15,6 @@ RUN wget -q --no-check-certificate https://cmake.org/files/v3.16/cmake-3.16.1-Li
 
 RUN useradd -ms /bin/bash conan \
     && printf "conan:conan" | chpasswd \
-    && adduser conan sudo \
     && printf "conan ALL= NOPASSWD: ALL\\n" >> /etc/sudoers 
 	
 
