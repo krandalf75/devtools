@@ -1,7 +1,7 @@
 FROM centos:7
 
 RUN yum -y groupinstall 'Development Tools'
-RUN yum -y install wget nasm python3 java-1.8.0-openjdk
+RUN yum -y install wget nasm python3 java-1.8.0-openjdk sudo 
 
 RUN wget -q --no-check-certificate https://cmake.org/files/v3.16/cmake-3.16.1-Linux-x86_64.tar.gz \
     && tar -xzf cmake-3.16.1-Linux-x86_64.tar.gz \
