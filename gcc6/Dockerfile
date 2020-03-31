@@ -34,6 +34,7 @@ RUN apt-get -qq update \
        libncursesw5-dev=6.* \
        liblzma-dev=5.* \
        autoconf-archive \
+       openjdk-8-jdk \
        ca-certificates \
     && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-6 100 \
     && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-6 100 \
