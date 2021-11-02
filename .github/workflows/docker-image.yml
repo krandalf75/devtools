@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build  debian-gcc-6/  --tag krandalf75/devtools:debian-gcc-6
+      run: docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }}; docker build  debian-gcc-6/ --tag krandalf75/devtools:debian-gcc-6
