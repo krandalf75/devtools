@@ -14,21 +14,27 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-    - run: docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Login
+      run: |
+        docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }}    
     - name: Build debian-gcc-6
-    - run: docker build  debian-gcc-6/ --tag krandalf75/devtools:debian-gcc-6
-    - run: docker image push krandalf75/devtools:debian-gcc-6
+      run: |
+        docker build  debian-gcc-6/ --tag krandalf75/devtools:debian-gcc-6
+        docker image push krandalf75/devtools:debian-gcc-6
     - name: Build debian-gcc-10
-    - run: docker build  debian-gcc-10/ --tag krandalf75/devtools:debian-gcc-10
-    - run: docker image push krandalf75/devtools:debian-gcc-10
+      run: |
+        docker build  debian-gcc-10/ --tag krandalf75/devtools:debian-gcc-10
+        docker image push krandalf75/devtools:debian-gcc-10
     - name: Build debian-clang-7
-    - run: docker build  debian-clang-7/ --tag krandalf75/devtools:debian-clang-7
-    - run: docker image push krandalf75/devtools:debian-clang-7
+      run: |
+        docker build  debian-clang-7/ --tag krandalf75/devtools:debian-clang-7
+        docker image push krandalf75/devtools:debian-clang-7
     - name: Build centos-gcc-4.8.5
-    - run: docker build  centos-gcc-4.8.5/ --tag krandalf75/devtools:centos-gcc-4.8.5
-    - run: docker image push krandalf75/devtools:centos-gcc-4.8.5
+      run: |
+        docker build  centos-gcc-4.8.5/ --tag krandalf75/devtools:centos-gcc-4.8.5
+        docker image push krandalf75/devtools:centos-gcc-4.8.5
     - name: Build  centos-gcc-7.3.1
-    - run: docker build  centos-gcc-7.3.1/ --tag krandalf75/devtools:centos-gcc-7.3.1
-    - run: docker image push krandalf75/devtools:centos-gcc-7.3.1
+      run: |
+        docker build  centos-gcc-7.3.1/ --tag krandalf75/devtools:centos-gcc-7.3.1
+        docker image push krandalf75/devtools:centos-gcc-7.3.1
     
