@@ -10,7 +10,6 @@ RUN apt-get -qq update \
        sudo=1.* \
        wget=1.* \
        git=1:2.* \
-       g++-10-multilib=10.* \
        make=4.* \
        libgmp-dev=2:6.* \
        libmpfrc++-dev=3.* \
