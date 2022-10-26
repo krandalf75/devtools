@@ -20,9 +20,9 @@ jobs:
     - name: Login
       run: |
         docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }}   
-    - name: Buildx debian-gcc-10
+    - name: Buildx oraclelinux9-gcc-11.2.1
       run: |       
-        docker buildx build --push --platform linux/amd64,linux/arm64 --tag krandalf75/devtools:debian-gcc-10 debian-gcc-10/
+        docker buildx build --push --platform linux/amd64,linux/arm64 --tag krandalf75/devtools:oraclelinux9-gcc-11.2.1 oraclelinux9-gcc-11.2.1/
     - name: Build debian-gcc-6
       run: |
         docker build  debian-gcc-6/ --tag krandalf75/devtools:debian-gcc-6
