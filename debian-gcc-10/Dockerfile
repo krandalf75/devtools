@@ -32,6 +32,7 @@ RUN apt-get -qq update \
        liblzma-dev=5.* \
        autoconf-archive \
        default-jdk \
+       build-essential \
        ca-certificates \
     && update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-10 100 \
     && update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-10 100 \
