@@ -1,4 +1,4 @@
-FROM debian:11.5
+FROM debian:11.6
 
 ENV CC=/usr/bin/gcc \
     CXX=/usr/bin/g++ \
