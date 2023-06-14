@@ -19,7 +19,11 @@ jobs:
       uses: docker/setup-buildx-action@v2
     - name: Login
       run: |
-        docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }}   
+        docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Build tomcat:9.0.74-debian-11-r6    
+      run: |
+        docker build  tomcat:9.0.74-debian-11-r6/ --tag krandalf75/devtools:debian-11-r6
+        docker image push krandalf75/devtools:debian-11-r6        
     - name: Buildx oraclelinux9-gcc-11.2.1
       run: |       
         docker buildx build --push --platform linux/amd64,linux/arm64 --tag krandalf75/devtools:oraclelinux9-gcc-11.2.1 oraclelinux9-gcc-11.2.1/
@@ -27,10 +31,6 @@ jobs:
       run: |
         docker build  debian-gcc-10/ --tag krandalf75/devtools:debian-gcc-10
         docker image push krandalf75/devtools:debian-gcc-10
-    - name: Build tomcat:9.0.74-debian-11-r6    
-      run: |
-        docker build  tomcat:9.0.74-debian-11-r6/ --tag krandalf75/devtools:debian-11-r6
-        docker image push krandalf75/devtools:debian-11-r6
     - name: Build  centos-gcc-7.3.1
       run: |
         docker build  centos-gcc-7.3.1/ --tag krandalf75/devtools:centos-gcc-7.3.1
