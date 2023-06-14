@@ -1,3 +1,5 @@
+FROM bitnami/tomcat:9.0.74-debian-11-r6
+
 ENV CC=/usr/bin/gcc \
     CXX=/usr/bin/g++ \
     PYENV_ROOT=/opt/pyenv \
