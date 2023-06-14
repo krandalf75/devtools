@@ -75,7 +75,7 @@ RUN apt-get -qq update \
 USER conan
 WORKDIR /home/conan
 
-RUN mkdir -p /home/conan/.conan \
-    && chmod 777 ~/.bashrc \
-    && printf 'eval "$(pyenv init -)"\n' >> ~/.bashrc \
-    && printf 'eval "$(pyenv virtualenv-init -)"\n' >> ~/.bashrc
+#RUN mkdir -p /home/conan/.conan \
+#    && chmod 777 ~/.bashrc \
+#    && printf 'eval "$(pyenv init -)"\n' >> ~/.bashrc \
+#    && printf 'eval "$(pyenv virtualenv-init -)"\n' >> ~/.bashrc
