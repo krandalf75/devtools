@@ -31,8 +31,13 @@ jobs:
       run: |
         docker build  debian-gcc-10/ --tag krandalf75/devtools:debian-gcc-10
         docker image push krandalf75/devtools:debian-gcc-10
+    - name: Build debian-gcc-12    
+      run: |
+        docker build  debian-gcc-12/ --tag krandalf75/devtools:debian-gcc-12
+        docker image push krandalf75/devtools:debian-gcc-12
     - name: Build  centos-gcc-7.3.1
       run: |
         docker build  centos-gcc-7.3.1/ --tag krandalf75/devtools:centos-gcc-7.3.1
         docker image push krandalf75/devtools:centos-gcc-7.3.1
-    
+        - name: Build  centos-gcc-7.3.1
+
